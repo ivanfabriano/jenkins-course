@@ -15,7 +15,6 @@ job('NodeJS Docker example') {
     steps {
         shell('echo "Attempting to build and publish the Docker image"')
         dockerBuildAndPublish {
-            registry('https://index.docker.io/v1/')
             repositoryName('ivanfabs/docker-jenkins')
             tag('${GIT_REVISION,length=9}')
             registryCredentials('dockerhub')
